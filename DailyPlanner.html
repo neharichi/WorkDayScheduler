@@ -4,29 +4,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, setupial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    </script>
     <title>Work Day Scheduler</title>
 </head>
 
 <body>
     <header>
         <h1 class="display-7">Work Day Scheduler</h1>
-        <p class="lead">Schedule you daily calender activities</p>
+        <p class="lead">A simple work day scheduler</p>
+
     </header>
     <div class="container">
-        <div class="input-group row">
+
+
+        <div class="input-group row timeblock">
             <div class="input-group-prepend">
                 <label for="tArea0" class="pt-3 pr-1 hour">09 am</label>
             </div>
             <textarea class="form-control text-area" id="tArea0" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn0"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn0">+</button>
             </div>
         </div>
 
@@ -36,8 +40,7 @@
             </div>
             <textarea class="form-control text-area" id="tArea1" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn1"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn1">+</button>
             </div>
         </div>
 
@@ -47,8 +50,7 @@
             </div>
             <textarea class="form-control text-area" id="tArea2" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn2"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn2">+</button>
             </div>
         </div>
 
@@ -58,8 +60,7 @@
             </div>
             <textarea class="form-control text-area" id="tArea3" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn3"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn3">+</button>
             </div>
         </div>
 
@@ -69,8 +70,7 @@
             </div>
             <textarea class="form-control text-area" id="tArea4" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn4"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn4">+</button>
             </div>
         </div>
 
@@ -80,8 +80,7 @@
             </div>
             <textarea class="form-control text-area" id="tArea5" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn5"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn " id="btn5">+</button>
             </div>
         </div>
 
@@ -91,8 +90,7 @@
             </div>
             <textarea class="form-control text-area " id="tArea6" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn6"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn6">+</button>
             </div>
         </div>
 
@@ -102,33 +100,32 @@
             </div>
             <textarea class="form-control text-area " id="tArea7" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn7"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn7">+</button>
             </div>
         </div>
 
         <div class="input-group row timeblock">
             <div class="input-group-prepend">
-                <label for="tArea8" class="pt-3 pr-1 hour">5 pm</label>
+                <label for="tArea8" class="pt-3 pr-1 hour">05 pm</label>
             </div>
             <textarea class="form-control text-area" id="tArea8" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn8"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn8">+</button>
             </div>
         </div>
 
         <div class="input-group row timeblock">
             <div class="input-group-prepend">
-                <label for="tArea8" class="pt-3 pr-1 hour">11 pm</label>
+                <label for="tArea9" class="pt-3 pr-1 hour">10 pm</label>
             </div>
-            <textarea class="form-control text-area" id="tArea8" cols="50"></textarea>
+            <textarea class="form-control text-area" id="tArea9" cols="50"></textarea>
             <div class="input-group-append">
-                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn11"><span
-                        class="fas fa-archive"></span></button>
+                <button type="submit" class="btn btn-primary btn-lg ml-0 pt-3 pb-3 saveBtn" id="btn9">+</button>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="script.js">
+    </script>
 </body>
 
 </html>
